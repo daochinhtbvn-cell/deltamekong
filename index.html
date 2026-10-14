@@ -416,7 +416,7 @@ const fmt = n => "$" + n;
 const KIDS_DAY = ["Under 3 years old: free","9 years old and under: 75% of adult price","10 years and above: adult price"];
 const KIDS_MULTI = ["4 years old and under: free (sits on a parent’s lap, shares parents’ bed and meals; 1 free child per 2 adults)","5 – 9 years old: 75% of adult price, own seat and meals","10 years and above: adult price"];
 const NOTE_DAY = ["Tour order may change depending on the actual situation, but all attractions are covered.","Tell us about food allergies in advance so we can arrange suitable dishes."];
-const NOTE_MULTI = ["Shared group tour, often with Vietnamese travelers. Message us to confirm the guide language for your date.","Bring your passport for hotel check-in.","Tour order may change depending on weather and traffic, but all attractions are covered."];
+const NOTE_MULTI = ["Bring your passport for hotel check-in.","Tour order may change depending on weather and traffic, but all attractions are covered."];
 
 const TOURS = [
 { id:"mekong", group:1, hot:true, name:"Mekong Delta 1 Day – My Tho & Ben Tre", tag:"Best seller", dur:"Full day · 7:30 AM – 6:00 PM", days:"1 day",
@@ -462,7 +462,7 @@ const TOURS = [
    ["Day 2 · Cai Rang Floating Market – My Khanh – Saigon","Breakfast, lunch\n5:30 AM boat trip to Cai Rang, one of the largest floating markets in the Delta, then a traditional rice-noodle workshop. Back to the hotel for buffet breakfast and check-out.\nVisit the Golden House (ticket not included), My Khanh tourist village (fruit gardens, a 100-year-old house, animal shows) and Truc Lam Phuong Nam Zen monastery. Lunch at My Khanh.\n1:30 PM stop at the Purple House café, then drive back to Saigon, arriving about 5:30 PM."]],
   options:[["3★ hotel (Holiday 2 Can Tho or similar)",92,69],["4★ hotel (Holiday One or similar) + breakfast at Mekong Restop + Purple House ticket",100,75],["5★ hotel (Muong Thanh Luxury) + breakfast at Mekong Restop + Purple House ticket",125,94]],
   single:[12,null,null],
-  inc:["Modern air-conditioned coach","Hotel in central Can Tho, twin or double room","2 lunches, 1 dinner cruise, 1 buffet breakfast","Boat, sampan and floating market boat","Entrance to My Khanh tourist village","Tour guide throughout","Life jackets, water, cold towels, fruit","Gifts: checkered scarf, travel hat, coconut","Travel insurance"],
+  inc:["Modern air-conditioned coach","Hotel in central Can Tho, twin or double room","2 lunches, 1 dinner cruise, 1 buffet breakfast","Boat, sampan and floating market boat","Entrance to My Khanh tourist village","English-speaking guide throughout","Life jackets, water, cold towels, fruit","Gifts: checkered scarf, travel hat, coconut","Travel insurance"],
   exc:["Single room supplement (1 person per room): $12 on the 3★ package; 4★ and 5★ quoted on request","Golden House ticket; Purple House ticket on the 3★ package","VAT invoice (8%) if requested","Personal expenses, tips"],
   kids:KIDS_MULTI, notes:NOTE_MULTI },
 
@@ -478,7 +478,7 @@ const TOURS = [
    ["Day 3 · Cai Rang Floating Market – My Khanh – Saigon","Breakfast, lunch\n5:30 AM boat to Cai Rang floating market and a rice-noodle workshop. Buffet breakfast and check-out.\nGolden House (ticket not included), My Khanh tourist village and Truc Lam Phuong Nam Zen monastery. Lunch at My Khanh.\n1:30 PM Purple House café, then back to Saigon about 5:30 PM."]],
   options:[["3★ hotels (Holiday 2 or similar), twin or double room",167,125]],
   single:[23],
-  inc:["Modern air-conditioned coach","2 nights in 3★ central hotels","3 lunches, 2 dinners (1 dinner cruise), 2 breakfasts","Boats, sampan, Tra Su boats and entrance fees","My Khanh village & Purple House tickets","Tour guide throughout","2 bottles of water per day, travel hat","Travel insurance"],
+  inc:["Modern air-conditioned coach","2 nights in 3★ central hotels","3 lunches, 2 dinners (1 dinner cruise), 2 breakfasts","Boats, sampan, Tra Su boats and entrance fees","My Khanh village & Purple House tickets","English-speaking guide throughout","2 bottles of water per day, travel hat","Travel insurance"],
   exc:["Single room supplement (1 person per room): $23","Golden House ticket","Meals and drinks not listed","Personal expenses, tips"],
   kids:KIDS_MULTI, notes:NOTE_MULTI },
 
@@ -495,7 +495,7 @@ const TOURS = [
    ["Day 4 · Cai Rang Floating Market – My Khanh – Saigon","Breakfast, lunch\nBoat on the Can Tho River: fish port, Quang Trung bridge, Cai Rang floating market and a rice-noodle workshop.\nMy Khanh tourist village and Truc Lam Phuong Nam Zen monastery. Lunch at My Khanh.\n1:30 PM Purple House café, back to Saigon about 5:30 PM."]],
   options:[["3★ central hotels, twin or double room",232,174]],
   single:[35],
-  inc:["Modern air-conditioned coach, boats and sampans","3 nights in 3★ central hotels","4 breakfasts, 4 lunches, 3 dinners (1 dinner cruise)","Entrance fees as listed","Life jackets","Tour guide throughout","Gifts: checkered scarf, travel hat, cold towels","Travel insurance"],
+  inc:["Modern air-conditioned coach, boats and sampans","3 nights in 3★ central hotels","4 breakfasts, 4 lunches, 3 dinners (1 dinner cruise)","Entrance fees as listed","Life jackets","English-speaking guide throughout","Gifts: checkered scarf, travel hat, cold towels","Travel insurance"],
   exc:["Single room supplement (1 person per room): $35","Purple House ticket","VAT invoice (8%) if requested","Tips for guide and driver (optional)"],
   kids:KIDS_MULTI, notes:NOTE_MULTI }
 ];
@@ -563,7 +563,7 @@ function openTour(id){
   const li = (a,c) => `<ul class="list ${c}">${a.map(x=>`<li>${x}</li>`).join("")}</ul>`;
   document.getElementById("mBody").innerHTML = `
     <h2 id="mTitle">${t.name}</h2>
-    <div class="meta">${t.days_?`<span>🕒 ${t.dur}</span><span>🏨 Hotel included</span><span>🍽️ Meals included</span><span>📍 Start in District 1</span>`:`<span>🕒 ${t.dur}</span><span>🗣️ English-speaking guide</span><span>🚐 Hotel pick-up</span>`}</div>
+    <div class="meta">${t.days_?`<span>🕒 ${t.dur}</span><span>🗣️ English-speaking guide</span><span>🏨 Hotel included</span><span>🍽️ Meals included</span><span>📍 Start in District 1</span>`:`<span>🕒 ${t.dur}</span><span>🗣️ English-speaking guide</span><span>🚐 Hotel pick-up</span>`}</div>
     <h4>Departures</h4>
     <div class="opts">${t.departs.map(d=>`<div class="opt"><span>${d[1]}</span><b>${d[0]}</b></div>`).join("")}</div>
     <h4>Tour program</h4>
